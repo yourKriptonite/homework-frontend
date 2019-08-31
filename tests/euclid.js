@@ -28,4 +28,16 @@ QUnit.module('Тестируем функцию euclid', function () {
 		const temp = [ 80325, 55275, 8746650, 3000000, 45672375, 225, 54675 ];
 		assert.strictEqual(euclid(...[ ...temp, ...temp, ...temp, ...temp, ...temp ]), euclid(...temp));
 	});
+
+	QUnit.test('Функции должна корректно завершать работу при некорретных данных', function (assert) {
+		assert.strictEqual(euclid(3, NaN, 9), undefined, 'euclid(3, NaN, 9) === undefined');
+		assert.strictEqual(euclid(), undefined, 'euclid() === undefined');
+		assert.strictEqual(euclid("hello", "ECMAScript"), undefined, 'euclid("hello", "ECMAScript") === undefined');
+		assert.strictEqual(euclid(null, undefined, NaN), undefined, 'euclid(null, undefined, NaN) === undefined');
+		assert.strictEqual(euclid(-12, -4), undefined, 'euclid(-12, -4) === undefined');
+		assert.strictEqual(euclid(-50e100, -4), undefined, 'euclid(-50e100, -4) === undefined');
+		assert.strictEqual(euclid({}, []), undefined, 'euclid({}, []) === undefined');
+		assert.strictEqual(euclid({}, [[]], Infinity), undefined, 'euclid({}, [[]], Infinity) === undefined');
+		assert.strictEqual(euclid("1", "9", "8", "4"), undefined, 'euclid("1", "9", "8", "4") === undefined');
+	});
 });
