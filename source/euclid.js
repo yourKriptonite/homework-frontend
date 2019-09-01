@@ -12,7 +12,6 @@ function gcd(a, b) {
 
 
 function euclid(...numbers) {
-
     if (!numbers.length) {
         return;
     }
