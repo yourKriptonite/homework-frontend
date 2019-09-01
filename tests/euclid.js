@@ -39,5 +39,8 @@ QUnit.module('Тестируем функцию euclid', function () {
 		assert.strictEqual(euclid({}, []), undefined, 'euclid({}, []) === undefined');
 		assert.strictEqual(euclid({}, [[]], Infinity), undefined, 'euclid({}, [[]], Infinity) === undefined');
 		assert.strictEqual(euclid("1", "9", "8", "4"), undefined, 'euclid("1", "9", "8", "4") === undefined');
+		assert.strictEqual(euclid("1.2", "9", "8.4", "4"), undefined, 'euclid("1.2", "9", "8.4", "4") === undefined');
+		assert.strictEqual(euclid(2.3, 6.7, 0), undefined, 'euclid(2.3, 6.7, 0) === undefined');
+		assert.strictEqual(euclid(0.3, 6.7, 5), undefined, 'uclid(0.3, 6.7, 5) === undefined');
 	});
 });
