@@ -44,15 +44,21 @@ QUnit.module('Тестируем функцию euclid', function () {
 
 	QUnit.test('Функции должна корректно завершать работу при получении чисел с плавующей точкой', function (assert) {
 		assert.strictEqual(globalThis.euclid(2.3, 6.7, 0), undefined, 'globalThis.euclid(2.3, 6.7, 0) === undefined');
-		assert.strictEqual(globalThis.euclid(2.3, 6.7, 0), undefined, 'globalThis.euclid(2.3, 6.7, 0) === undefined');
-		assert.strictEqual(globalThis.euclid(-50e100, -4), undefined, 'globalThis.euclid(-50e100, -4) === undefined');
+		assert.strictEqual(globalThis.euclid(45, 1.5, 3), undefined, 'globalThis.euclid(45, 1.5, 3) === undefined');
+		assert.strictEqual(globalThis.euclid(8.6, 45), undefined, 'globalThis.euclid(8.6, 45) === undefined');
 	});
 
-	QUnit.test('Функции должна корректно завершать работу при некорретных данных', function (assert) {
+	QUnit.test('Функции должна корректно завершать работу при получении отрицательных чисел', function (assert) {
+		assert.strictEqual(globalThis.euclid(-12, -4), undefined, 'globalThis.euclid(-12, -4) === undefined');
+		assert.strictEqual(globalThis.euclid(-2.3, 6.7, 0), undefined, 'globalThis.euclid(-2.3, 6.7, 0) === undefined');
+		assert.strictEqual(globalThis.euclid(-50e100, -4), undefined, 'globalThis.euclid(-50e100, -4) === undefined');
+	});
+	
+
+	QUnit.test('Функции должна корректно завершать работу при некорретных аргументах', function (assert) {
 		assert.strictEqual(globalThis.euclid(3, NaN, 9), undefined, 'globalThis.euclid(3, NaN, 9) === undefined');
 		assert.strictEqual(globalThis.euclid(), undefined, 'globalThis.euclid() === undefined');
 		assert.strictEqual(globalThis.euclid(null, undefined, NaN), undefined, 'globalThis.euclid(null, undefined, NaN) === undefined');
-		assert.strictEqual(globalThis.euclid(-12, -4), undefined, 'globalThis.euclid(-12, -4) === undefined');
 		assert.strictEqual(globalThis.euclid({}, []), undefined, 'globalThis.euclid({}, []) === undefined');
 		assert.strictEqual(globalThis.euclid({}, [[]], Infinity), undefined, 'globalThis.euclid({}, [[]], Infinity) === undefined');
 	});

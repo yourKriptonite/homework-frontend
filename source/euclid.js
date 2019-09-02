@@ -9,8 +9,8 @@
  * // returns 7
  * globalThis.gcd(21, 14);
  * 
- * @param  {number} a - First number must be an integer.
- * @param {number} b - Second number must be an integer.
+ * @param  {number} a - First number must be an positive integer.
+ * @param {number} b - Second number must be an positive integer.
  * @return {number} Return value
  */
 globalThis.gcd = (a, b) => {
@@ -37,7 +37,7 @@ globalThis.gcd = (a, b) => {
  * globalThis.euclid("String", 16, 8, "Hello");
  * 
  * @param {...number} numbers - The function accepts a variable 
- *      number of numeric parameters.
+ *      number of positive integer parameters.
  * @return {number} Return value
  * @return {undefined} Return value if contracts not obrserved
  */
